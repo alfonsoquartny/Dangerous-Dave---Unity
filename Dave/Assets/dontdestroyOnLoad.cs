@@ -1,21 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class skorsistem : MonoBehaviour
+public class dontdestroyOnLoad : MonoBehaviour
 {
-    public int scor = 0;
-    public Text scorBoard;
+    // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         DontDestroyOnLoad(gameObject);
-        scorBoard.text = "SCORE :  " + scor.ToString();
     }
 }
