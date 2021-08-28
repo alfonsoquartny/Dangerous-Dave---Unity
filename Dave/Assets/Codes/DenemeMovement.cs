@@ -14,14 +14,14 @@ public class DenemeMovement : MonoBehaviour
     void Start()
     {
         rigi = GetComponent<Rigidbody2D>();
-        
+
     }
 
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.LeftArrow)&& Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.RightArrow)&& Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.A)&& Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.LeftArrow)&& Input.GetKeyDown(KeyCode.RightArrow))
         {
             animator.SetBool("isWalk", true);
         }
