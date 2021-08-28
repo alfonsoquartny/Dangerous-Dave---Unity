@@ -9,7 +9,6 @@ public class playerCode : MonoBehaviour
     public Animator kameraAnimator;
     void Start()
     {
-      
     }
 
     // Update is called once per frame
@@ -30,4 +29,5 @@ public class playerCode : MonoBehaviour
             kameraAnimator.SetBool("gecis", true);
         }
     }
+
 }

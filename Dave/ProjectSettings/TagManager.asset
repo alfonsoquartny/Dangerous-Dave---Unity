@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - diamondPink
   - Door
+  - gecis
+  - gecisGeri
   layers:
   - Default
   - TransparentFX
