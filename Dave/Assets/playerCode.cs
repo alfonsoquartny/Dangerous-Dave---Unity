@@ -7,6 +7,7 @@ public class playerCode : MonoBehaviour
 {
 
     public Animator kameraAnimator;
+    public bool degisken;
     void Start()
     {
     }
@@ -26,7 +27,15 @@ public class playerCode : MonoBehaviour
 
         if (collision.gameObject.CompareTag("gecis"))
         {
-            kameraAnimator.SetBool("gecis", true);
+            kameraAnimator.SetInteger("gecisInt", 1);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("gecis"))
+        {
+            kameraAnimator.SetInteger("gecisInt", 2);
         }
     }
 
