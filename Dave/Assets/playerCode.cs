@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class playerCode : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public Animator kameraAnimator;
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -22,6 +23,11 @@ public class playerCode : MonoBehaviour
         if (collision.gameObject.CompareTag("Door"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        if (collision.gameObject.CompareTag("gecis"))
+        {
+            kameraAnimator.SetBool("gecis", true);
         }
     }
 }
