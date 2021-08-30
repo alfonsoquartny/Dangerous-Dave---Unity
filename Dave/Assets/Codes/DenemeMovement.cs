@@ -8,7 +8,8 @@ public class DenemeMovement : MonoBehaviour
     Rigidbody2D rigi;
     Vector3 velocity;
     public Animator animator;
-
+    public AudioSource audio;
+    public AudioClip walkSound;
     public float speedeger = 10f;
     public float jumpdeger = 10f;
     void Start()
@@ -25,7 +26,7 @@ public class DenemeMovement : MonoBehaviour
         {
             animator.SetBool("isWalk", true);
         }
-        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.RightArrow) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKeyUp(KeyCode.RightArrow))
         {
             animator.SetBool("isWalk", false);
         }
