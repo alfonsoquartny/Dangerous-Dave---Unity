@@ -10,6 +10,8 @@ TagManager:
   - gecis
   - gecisGeri
   - fire
+  - gecis3
+  - gecis2
   layers:
   - Default
   - TransparentFX

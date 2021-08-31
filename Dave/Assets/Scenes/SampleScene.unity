@@ -532,6 +532,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kameraAnimator: {fileID: 519420033}
   degisken: 0
+  spawnPoint: {fileID: 0}
+  MovementCode: {fileID: 0}
+  hearts: 3
+  isDead: 0
+  timer: 0
 --- !u!1 &53033953
 GameObject:
   m_ObjectHideFlags: 0
@@ -10093,7 +10098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 16}
   m_SizeDelta: {x: 523.0449, y: 47.9134}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!95 &2142427229

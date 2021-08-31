@@ -13,6 +13,7 @@ public class playerCode : MonoBehaviour
     public int hearts=3;
     public bool isDead;
     public float timer = 0;
+    public int gecis3=1;
     void Start()
     {
     }
@@ -20,6 +21,10 @@ public class playerCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gecis3 == 3)
+        {
+            kameraAnimator.SetInteger("gecisInt", 3);
+        }
         if (isDead == true)
         {
             timer += Time.deltaTime;
@@ -47,6 +52,11 @@ public class playerCode : MonoBehaviour
         if (collision.gameObject.CompareTag("gecis"))
         {
             kameraAnimator.SetInteger("gecisInt", 1);
+            gecis3 = 0;
+        }
+        if (collision.gameObject.CompareTag("gecis2"))
+        {
+            gecis3 = 3;
         }
         if (collision.gameObject.CompareTag("fire"))
         {
@@ -61,9 +71,14 @@ public class playerCode : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("gecis"))
+        if (collision.gameObject.CompareTag("gecis")&&gecis3==0)
         {
             kameraAnimator.SetInteger("gecisInt", 2);
+        }
+
+        if (collision.gameObject.CompareTag("gecis2"))
+        {
+            gecis3 = 0;
         }
     }
 
