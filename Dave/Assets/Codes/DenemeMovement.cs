@@ -10,8 +10,8 @@ public class DenemeMovement : MonoBehaviour
     public Animator animator;
     public AudioSource audio;
     public AudioClip walkSound;
-    public float speedeger = 10f;
-    public float jumpdeger = 10f;
+    public float speedeger = 3f;
+    public float jumpdeger = 9f;
     void Start()
     {
         rigi = GetComponent<Rigidbody2D>();
