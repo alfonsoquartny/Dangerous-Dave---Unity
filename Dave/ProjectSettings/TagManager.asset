@@ -18,6 +18,8 @@ TagManager:
   - spawnpoint
   - bosluk
   - gun
+  - cameraSpawnpoint
+  - Door2
   layers:
   - Default
   - TransparentFX

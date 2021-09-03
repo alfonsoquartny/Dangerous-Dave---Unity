@@ -7,11 +7,15 @@ public class playerCode : MonoBehaviour
 {
     public int hearts;
 
+    public CameraCode cameracode;
+
     public Animator kameraAnimator;
     public bool degisken;
     public GameObject spawnPoint;
     public DenemeMovement MovementCode;
     public int gecis3=1;
+
+    public GameObject kamera;
 
     public GameObject lives3;
     public GameObject lives2;
@@ -69,10 +73,21 @@ public class playerCode : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Door"))
         {
+            kameraAnimator.SetInteger("gecisInt",0);
             gameObject.transform.position = spawnPoint.transform.position;
+            cameracode.activeLevel = cameracode.activeLevel + 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
 
+        }
+        if (collision.gameObject.CompareTag("Door2"))
+        {
+            DestroyObject(kamera);
+            kameraAnimator.SetInteger("gecisInt", 0);
+            gameObject.transform.position = spawnPoint.transform.position;
+            cameracode.activeLevel = cameracode.activeLevel + 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
         if (collision.gameObject.CompareTag("gecis"))
         {
             kameraAnimator.SetInteger("gecisInt", 1);

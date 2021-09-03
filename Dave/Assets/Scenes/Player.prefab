@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2695608329361286777}
   - component: {fileID: 2695608329361286776}
   - component: {fileID: 2695608329361286779}
+  - component: {fileID: -5543192421254766593}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -50,8 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2695608329361286776}
-  audio: {fileID: 0}
-  walkSound: {fileID: 8300000, guid: c99f9b9c16346c648aafaa1d3f913e69, type: 3}
   speedeger: 3
   jumpdeger: 9
 --- !u!212 &2695608329361286775
@@ -184,14 +183,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55baea03534b5b4196ff8b7ccba2bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearts: 0
   kameraAnimator: {fileID: 0}
   degisken: 0
   spawnPoint: {fileID: 0}
   MovementCode: {fileID: 2695608329361286772}
-  isDead: 0
-  timer: 0
   gecis3: 0
-  skorsistem: {fileID: 0}
+  lives3: {fileID: 0}
+  lives2: {fileID: 0}
+  lives1: {fileID: 0}
+  bosluk: {fileID: 0}
+--- !u!114 &-5543192421254766593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695608329361286778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c7ae4ceb72d55469164f4d45869c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "silahAl\u0131nd\u0131": 0
+  timer: 2
+  isTimer: 0
 --- !u!1 &2695608329918912178
 GameObject:
   m_ObjectHideFlags: 0
