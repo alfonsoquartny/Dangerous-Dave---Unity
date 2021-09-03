@@ -17,6 +17,7 @@ TagManager:
   - lives1
   - spawnpoint
   - bosluk
+  - gun
   layers:
   - Default
   - TransparentFX
