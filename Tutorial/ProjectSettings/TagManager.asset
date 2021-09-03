@@ -3,25 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - diamondPink
-  - Door
-  - gecis
-  - gecisGeri
-  - fire
-  - gecis3
-  - gecis2
-  - lives3
-  - lives2
-  - lives1
-  - spawnpoint
-  - bosluk
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 

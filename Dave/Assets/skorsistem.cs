@@ -7,14 +7,17 @@ public class skorsistem : MonoBehaviour
 {
     public int scor = 0;
     public Text scorBoard;
+
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+
         DontDestroyOnLoad(gameObject);
         scorBoard.text = "SCORE :  " + scor.ToString();
     }

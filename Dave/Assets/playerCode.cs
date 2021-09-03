@@ -5,47 +5,71 @@ using UnityEngine.SceneManagement;
 
 public class playerCode : MonoBehaviour
 {
+    public int hearts;
 
     public Animator kameraAnimator;
     public bool degisken;
-    public Transform spawnPoint;
+    public GameObject spawnPoint;
     public DenemeMovement MovementCode;
-    public int hearts=3;
-    public bool isDead;
-    public float timer = 0;
     public int gecis3=1;
+
+    public GameObject lives3;
+    public GameObject lives2;
+    public GameObject lives1;
+
+    public GameObject bosluk;
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
+        
+     
+        spawnPoint = GameObject.FindGameObjectWithTag("spawnpoint");
+        gameObject.transform.position = spawnPoint.transform.position;
+        lives3 = GameObject.FindGameObjectWithTag("lives3");
+        lives2 = GameObject.FindGameObjectWithTag("lives2");
+        lives1 = GameObject.FindGameObjectWithTag("lives1");
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        DontDestroyOnLoad(gameObject);
+        lives2 = GameObject.FindGameObjectWithTag("lives2");
+        lives1 = GameObject.FindGameObjectWithTag("lives1");
+        lives3 = GameObject.FindGameObjectWithTag("lives3");
+        bosluk = GameObject.FindGameObjectWithTag("bosluk");
+
+
+
+        if (hearts < 3)
+        {
+            lives3.transform.position = bosluk.transform.position;  
+        }
+        if (hearts < 2)
+        {
+            lives2.transform.position = bosluk.transform.position;
+        }
+        if (hearts < 1)
+        {
+            lives1.transform.position = bosluk.transform.position;
+        }
+
+    
+
         if (gecis3 == 3)
         {
             kameraAnimator.SetInteger("gecisInt", 3);
         }
-        if (isDead == true)
-        {
-            timer += Time.deltaTime;
-        }
-        if (timer > 2)
-        {
-            isDead = false;
-            MovementCode.speedeger = 3f;
-            MovementCode.jumpdeger = 9f;
 
-        }
-        if (isDead == false)
-        {
-            timer = 0;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Door"))
         {
+            gameObject.transform.position = spawnPoint.transform.position;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
@@ -60,11 +84,9 @@ public class playerCode : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("fire"))
         {
-            MovementCode.speedeger = 0f;
-            MovementCode.jumpdeger = 0f;
             gameObject.transform.position = spawnPoint.transform.position;
-            hearts = hearts - 1;
-            isDead = true;
+            hearts  = hearts - 1;
+       
           
         }
     }
