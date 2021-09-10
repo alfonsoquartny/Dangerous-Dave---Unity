@@ -14,12 +14,12 @@ public class gun : MonoBehaviour
 
     public GameObject hedef;
 
-    public float speed = 1f;
-   
+    public float speed = 150f;
 
+    public Rigidbody2D bulletRigid;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -28,27 +28,35 @@ public class gun : MonoBehaviour
 
 #pragma checksum
      
-        if (Input.GetKey(KeyCode.E))
-        {
-            bullet.transform.position = hedef.transform.position*speed;
-        }
+   
         gunImage = GameObject.FindGameObjectWithTag("gun");
 
         if (silahAlýndý == true && timer == 2 && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Debug.Log("ATEÞ EDÝLDÝ");
+            speed = 150f;
+            bulletRigid.AddForce(transform.right * speed, ForceMode2D.Force);
             isTimer = true;
         }
+        
 
         if (isTimer == true)
         {
             timer -= Time.deltaTime;
         }
 
+        if (isTimer ==false)
+        {
+            bullet.transform.position = gameObject.transform.position;
+        }
+
+
         if (timer < 0)
         {
+            
             isTimer = false;
             timer = 2;
+            speed = 0f;
+            bullet.transform.position = gameObject.transform.position;
         }
     }
 
