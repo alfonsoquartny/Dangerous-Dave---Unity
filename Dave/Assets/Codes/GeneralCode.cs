@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GeneralCode : MonoBehaviour
 {
-    public skorsistem Code;
     
     void Start()
     {
@@ -20,10 +19,9 @@ public class GeneralCode : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("diamondPink"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-           
-            Code.scor = Code.scor + 500;
+            gameObject.SetActive(false);
             
         }
     }

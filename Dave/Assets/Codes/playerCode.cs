@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class playerCode : MonoBehaviour
 {
     public int hearts;
-
+    public skorsistem Code;
     public CameraCode cameracode;
 
     public Animator kameraAnimator;
@@ -71,6 +71,12 @@ public class playerCode : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.gameObject.CompareTag("diamondPink"))
+        {
+            Code.scor = Code.scor + 500;
+        }
+
         if (collision.gameObject.CompareTag("Door"))
         {
             kameraAnimator.SetInteger("gecisInt",0);
