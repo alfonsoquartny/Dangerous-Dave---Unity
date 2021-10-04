@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2695608329361286773}
+  - component: {fileID: 2271418331544647897}
   - component: {fileID: 2695608329361286772}
   - component: {fileID: 2695608329361286775}
   - component: {fileID: 2695608329361286774}
@@ -38,6 +39,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2271418331544647897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695608329361286778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040d19fe0dfdf2042901e2fcaa140aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Code: {fileID: 0}
 --- !u!114 &2695608329361286772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +67,7 @@ MonoBehaviour:
   animator: {fileID: 2695608329361286776}
   speedeger: 3
   jumpdeger: 9
+  isMove: 0
 --- !u!212 &2695608329361286775
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -184,11 +199,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hearts: 0
+  cameracode: {fileID: 0}
   kameraAnimator: {fileID: 0}
   degisken: 0
   spawnPoint: {fileID: 0}
   MovementCode: {fileID: 2695608329361286772}
   gecis3: 0
+  kamera: {fileID: 0}
   lives3: {fileID: 0}
   lives2: {fileID: 0}
   lives1: {fileID: 0}
@@ -208,6 +225,11 @@ MonoBehaviour:
   "silahAl\u0131nd\u0131": 0
   timer: 2
   isTimer: 0
+  bullet: {fileID: 0}
+  gunImage: {fileID: 0}
+  hedef: {fileID: 0}
+  speed: 150
+  bulletRigid: {fileID: 0}
 --- !u!1 &2695608329918912178
 GameObject:
   m_ObjectHideFlags: 0

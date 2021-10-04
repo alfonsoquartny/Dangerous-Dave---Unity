@@ -10,6 +10,7 @@ public class DenemeMovement : MonoBehaviour
     public Animator animator;
     public float speedeger = 3f;
     public float jumpdeger = 9f;
+    public bool isMove;
     void Start()
     {
         speedeger = 3f;
@@ -21,12 +22,16 @@ public class DenemeMovement : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.LeftArrow)&& Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.RightArrow)&& Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.A)&& Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.LeftArrow)&& Input.GetKeyDown(KeyCode.RightArrow))
+      
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            isMove = false;
+        }
+        if (isMove == true)
         {
             animator.SetBool("isWalk", true);
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.RightArrow) && Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKeyUp(KeyCode.RightArrow))
+        if (isMove==false)
         {
             animator.SetBool("isWalk", false);
         }
@@ -49,10 +54,12 @@ public class DenemeMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") == -1)
         {
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            isMove = true;
         }
         else if (Input.GetAxisRaw("Horizontal") == 1)
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            isMove = true;
         }
     }
 
