@@ -71,7 +71,13 @@ public class playerCode : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("monsterBullet"))
+        {
+            gameObject.transform.position = spawnPoint.transform.position;
+            hearts = hearts - 1;
+            Debug.Log("Temas" + "Saðlandý");
 
+        }
         if (collision.gameObject.CompareTag("diamondPink"))
         {
             Code.scor = Code.scor + 500;

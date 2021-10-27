@@ -22,6 +22,8 @@ TagManager:
   - Door2
   - bullet
   - monster
+  - test
+  - monsterBullet
   layers:
   - Default
   - TransparentFX
